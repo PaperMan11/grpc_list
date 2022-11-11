@@ -1,0 +1,13 @@
+server:
+  serviceName: "task"
+  grpcAddress: "0.0.0.0:10002"
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  database: "grpc_list"
+  username: "tzq"
+  password: "123456"
+
+etcd:
+  address: "127.0.0.1:2379"

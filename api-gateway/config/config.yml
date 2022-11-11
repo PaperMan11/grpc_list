@@ -1,0 +1,5 @@
+server:
+  port: 5000
+
+etcd:
+  address: "127.0.0.1:2379"

@@ -1,0 +1,39 @@
+syntax = "proto3";
+package pb;
+
+option go_package = "./;pb";
+
+service UserService {
+    rpc UserLogin(LoginRequest) returns (UserDetalResponse){}
+    rpc UserRegister(RegRequest) returns (UserDetalResponse){} 
+}
+
+message LoginRequest {
+    // @gotags: json:"user_id" form:"user_id"
+    int64 UserId = 1;
+    // @gotags: json:"user_password" form:"user_password"
+    string UserPassword = 2;
+}
+
+message RegRequest {
+    // @gotags: json:"user_name"
+    string UserName = 1;
+    // @gotags: json:"user_password"
+    string UserPassword = 2;
+    // @gotags: json:"user_password2"
+    string UserPassword2 = 3;
+}
+
+message UserModel {
+    // @gotags: json:"user_id"
+    int64 UserId = 1;
+    // @gotags: json:"user_name"
+    string UserName = 2;
+    // @gotags: json:"user_password"
+    string UserPassword = 3;
+}
+
+message UserDetalResponse {
+    UserModel UserDetail = 1;
+    uint32 Code = 2;
+}
